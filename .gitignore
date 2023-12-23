@@ -25,3 +25,12 @@ dist
 private.py
 examples
 
+# wheel storage
+pypi
+
+# macOS stuff
+.DS_Store
+
+# jupyterlite stuff
+.cache
+.jupyterlite*
