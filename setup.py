@@ -4,8 +4,8 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
-    name="cytools-wasm",
-    version="0.0.1",
+    name="cytools",
+    version="0.1.0",
     author="Andres Rios Tascon",
     author_email="",
     description="A WebAssembly implementation of CYTools.",
@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/ariostas/cytools-wasm",
     packages=setuptools.find_packages(),
     license="GNU General Public License (GPL)",
-    python_requires='>=3.9',
+    python_requires='>=3.11',
     install_requires=[],
     classifiers=[
         "Programming Language :: Python :: 3",
