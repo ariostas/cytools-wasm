@@ -31,6 +31,7 @@ jobs:
         run: |
           cp README.md content
           cd pypi/
+          wget https://github.com/ariostas/python-flint-wasm/releases/download/v0.1.0/python_flint_wasm-0.5.0-cp311-cp311-emscripten_3_1_45_wasm32.whl
           jupyter piplite index
           cd ..
           jupyter lite build --contents content --output-dir dist
