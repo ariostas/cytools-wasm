@@ -24,7 +24,7 @@ import ast
 import fractions
 import functools
 import itertools
-import requests
+#import requests
 import subprocess
 from typing import Generator
 

@@ -31,7 +31,7 @@ import warnings
 from flint import fmpz_mat, fmpq_mat
 import numpy as np
 from numpy.typing import ArrayLike
-import ppl
+#import ppl
 from scipy.spatial import ConvexHull
 from tqdm import tqdm
 
@@ -139,13 +139,7 @@ class Polytope:
                                                 f" Options are {backends}.")
 
         if backend is None:
-            if self._dim <= 4:
-                backend = "ppl"
-            else:
-                backend = "palp"
-
-        if self._dim == 0: # 0-dimensional polytopes are finicky
-            backend = "palp"
+            backend = "qhull"
 
         self._backend = backend
 
@@ -2983,7 +2977,7 @@ class Polytope:
                     points: ArrayLike = None,
                     simplices: ArrayLike = None,
                     check_input_simplices: bool = True,
-                    backend: str = "cgal") -> Triangulation:
+                    backend: str = "qhull") -> Triangulation:
         """
         **Description:**
         Returns a single regular triangulation of the polytope.

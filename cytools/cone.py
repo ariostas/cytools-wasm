@@ -32,10 +32,10 @@ import warnings
 # 3rd party imports
 from flint import fmpz_mat, fmpz, fmpq
 import numpy as np
-from ortools.linear_solver import pywraplp
-from ortools.sat.python import cp_model
-import ppl
-import qpsolvers
+#from ortools.linear_solver import pywraplp
+#from ortools.sat.python import cp_model
+#import ppl
+#import qpsolvers
 from scipy import sparse
 from scipy.optimize import nnls
 
@@ -210,6 +210,10 @@ class Cone:
             else:
                 data = array_fmpq_to_float(data)
         elif t == np.int8:
+            # rest of calculations assume ints are 64-bit? convert...
+            data = data.astype(np.int64)
+            t = np.int64
+        elif t == np.int32:
             # rest of calculations assume ints are 64-bit? convert...
             data = data.astype(np.int64)
             t = np.int64

@@ -121,7 +121,7 @@ class Triangulation:
                  make_star: bool = False,
                  simplices: ArrayLike = None,
                  check_input_simplices: bool = True,
-                 backend: str = "cgal") -> None:
+                 backend: str = "qhull") -> None:
         """
         **Description:**
         Initializes a `Triangulation` object.
@@ -2107,7 +2107,7 @@ def random_triangulations_fast_generator(triang_pts: ArrayLike,
                                          max_retries: int = 500,
                                          make_star: bool = False,
                                          only_fine: bool = True,
-                                         backend: str = "cgal",
+                                         backend: str = "qhull",
                                          poly: "Polytope" = None,
                                          seed: int =None) -> "generator[Triangulation]":
     """
